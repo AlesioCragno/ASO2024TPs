@@ -4,8 +4,9 @@
 
     b. Son tiempos similares, la diferencia es de milisegundos.
     
-    c. Lo que pasa es que al descomentar aumenta el tiempo de ejecucion y el valor final deja de dar "0", dando resultados positivos y negativos. 
-    Porque al descomentar el ciclo for aumenta la carga del cpu y eso hace que aumente mas el tiempo de ejecucion.
+    c. Lo que pasa es que al descomentar aumenta el tiempo de ejecucion y el valor final deja de dar "0", dando resultados positivos y negativos, a esto se le llama race condition ya que intenta ejecutar dos o mas tareas a la ves y esto puede ocasionar cierta vulnerabilidad.
+    Porque al descomentar el ciclo for aumenta la carga del cpu y eso hace que aumente mas el tiempo de ejecucion ocasionando asi problemas en el acumulador (zona critica),
+    siendo que utilizan la misma variable. 
 
 2) a. 
 #include <pthread.h>
