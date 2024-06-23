@@ -19,18 +19,15 @@ if [ $op = "1" ]; then
     echo La respuesta es:
     suma= expr $num1 + $num2
 
-fi
-
-if [ $op = "2" ]; then
+elif [ $op = "2" ]; then
     echo Ingrese el primer numero
     read num1
     echo Ingrese el segundo numero
     read num2
     echo La respuesta es:
     resta= expr $num1 - $num2
-fi 
 
-if [ $op = "3" ]; then
+elif [ $op = "3" ]; then
     echo Ingrese el primer numero
     read num1
     echo Ingrese el segundo numero
@@ -38,15 +35,20 @@ if [ $op = "3" ]; then
     echo La respuesta es:
     multiplicacion=$(($num1 * $num2))
     echo $multiplicacion
-fi
 
-if [ $op = "4" ]; then
+elif [ $op = "4" ]; then
     echo Ingrese el primer numero
     read num1
     echo Ingrese el segundo numero
     read num2
+    
+    if [ $num1 -eq "0" -o $num2 -eq "0" ]; then
+        echo "Error, no es posible dividir por 0."
+        else
+        division=$(($num1 / $num2))
+        echo "La respuesta es: $division"
+    fi
+else
+    echo "Opcion invalida."
 
-    echo La respuesta es:
-    division=$(($num1 / $num2))
-    echo $division
 fi
